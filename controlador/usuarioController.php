@@ -21,21 +21,21 @@ class UsuarioController {
 
             if ($nombre && $salario_base !== false && $salario_base >= 0 && $comision_pct !== false && $comision_pct >= 0 && $comision_pct <= 1) {
                 if ($this->model->crear($nombre, $salario_base, $comision_pct)) {
-                    $message = "Empleado '$nombre' registrado exitosamente.";
+                    $message = "usuario '$nombre' registrado exitosamente.";
                 } else {
-                    $error = "Error al registrar al empleado.";
+                    $error = "Error al registrar al usuario.";
                 }
             } else {
                 $error = "Datos de entrada inválidos. Asegúrese de que el salario base y la comisión sean números válidos y que la comisión esté entre 0 y 1.";
             }
         }
         
-        require_once __DIR__ . '/../vista/usuario_form.php';
+        require_once __DIR__ . '/../vista/lista.php';
     }
 
     public function listarEmpleados() {
         $empleados = $this->model->listar();
-        require_once __DIR__ . '/../views/empleado_list.php';
+        require_once __DIR__ . '/../vista/lista.php';
     }
 }
 ?>
