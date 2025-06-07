@@ -4,6 +4,7 @@
 
 <?php if (empty($empleados)): ?>
     <p>No hay usuarios registrados.</p>
+    <a href="..\..\vista\index.html">volver al inicio</a>
 <?php else: ?>
     <table >
         <thead>
@@ -27,4 +28,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <a href="..\..\vista\index.html">volver al inicio</a>
 <?php endif; ?>
